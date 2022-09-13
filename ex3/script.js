@@ -1,9 +1,10 @@
 const body = document.querySelector('body');
-const colors = document.querySelectorAll('.container-squares div');
+const squares = document.querySelectorAll('.square');
 
-colors.forEach(color => {
-    color.addEventListener('click', function () {
-        body.removeAttribute('class');
-        body.classList.add(this.id);
-    })
+const handleChangebackgroundColorMain = (e) => {
+    body.style.setProperty('--primary-color', e.target.id);
+};
+
+squares.forEach(square => {
+    square.addEventListener('click', handleChangebackgroundColorMain)
 })
